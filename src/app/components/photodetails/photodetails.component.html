@@ -1,0 +1,20 @@
+<div class="" *ngIf="photo">
+    <div class="row">
+        <div class="card  card-body mb-3" >
+            <div class="row no-gutters">
+                <div class="col-md-7">
+                    <img src="{{photo.url}}" class="" alt="photo large">
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Details</h5>
+                        <p class="card-text"><span class="strong">Title:</span> {{photo.title}}</p>
+                        <p class="card-text"><span class="strong pr-5">Album Id: {{photo.albumId}}</span><span class="strong">Id: {{photo.id}}</span> </p>
+                        <p class="card-text"><a [routerLink]="['/photos/edit', photo.id]"  target="_blank" class="btn btn-warning btn-block">Edit</a></p>
+                        <a target="_blank" class="btn btn-danger btn-block" (click)=deletePhoto(photo)>Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="card card-body mb-3">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-group">
+            <label >albumId:</label>
+            <input name="name" [(ngModel)]="name" type="text" class="form-control" placeholder="Add a event name..." id="name">
+        </div>
+        <div class="form-group">
+            <label >AlbumId:</label>
+            <input name="date" [(ngModel)]="date" class="form-control" type="text" value="2011-08-19" id="date">
+        </div>
+        <div class="form-group">
+            <label >Title</label>
+            <input name="description" [(ngModel)]="description" class="form-control" type="text"  id="description">
+        </div>
+        <input *ngIf="!isNew" type="submit" value="Save changes" class="btn btn-primary">
+        <!-- <input  *ngIf="isNew" type="submit" value="Add new event" class="btn btn-secondary"> -->
+        <!-- <button type="button" class="btn btn-secondary" [hidden]="!this.name && !this.date && !this.description" (click)="addNewEvent()">Add new event</button> -->
+            <!--<input *ngIf="!isNew" type="submit" value="Update log" class="btn btn-light" [disabled]="!this.text">-->
+        <button type="button" class="btn btn-warning" [hidden]="!this.name && !this.date && !this.description" (click)="clearState()">Clear</button> 
+    </form>
+    
+    
+</div>
+<a class="nav-link" routerLink="/photos" >See all photos</a>
+
+        <div class="row">
+            <div class="card  card-body mb-3" >
+                <div class="row no-gutters">
+                    <div class="col-md-7">
+                        <img src="{{photo.url}}" class="" alt="photo large">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card-body">
+                            <h5 class="card-title">Details</h5>
+                            <p class="card-text"><span class="strong">Title:</span> {{photo.title}}</p>
+                            <p class="card-text"><span class="strong pr-5">Album Id: {{photo.albumId}}</span><span class="strong">Id: {{photo.id}}</span> </p>
+                            <p class="card-text"><a [routerLink]="['/photos/edit', photo.id]"  target="_blank" class="btn btn-warning btn-block">Edit</a></p>
+                            <a target="_blank" class="btn btn-danger btn-block" (click)=deletePhoto(photo)>Delete</a>
+                            <a [routerLink]="['/profile/upload']" target="_blank" class="btn btn-danger btn-block">Upload</a>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

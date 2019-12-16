@@ -14,9 +14,9 @@ export class PhotosComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getAllPhotos().subscribe(resData=>{
-      console.log(this.photos);
+      
       this.photos=resData;
-      console.log(resData);
+      console.log(this.photos);
     })
   
   }

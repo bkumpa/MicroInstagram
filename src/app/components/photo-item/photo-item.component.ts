@@ -11,6 +11,6 @@ export class PhotoItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }
